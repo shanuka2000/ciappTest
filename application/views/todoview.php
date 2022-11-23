@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h1>Todo App</h1>
             <form class="newTodoSection" action="/ciappTest/index.php/Todo/addTodo" method="POST">
                 <input type="text" name="todo" placeholder="Add your new todo"/>
-                <button type="submit" name="Submit">
+                <button type="submit" name="Submit" id="submitTodo">
                     <ion-icon name="add-outline"></ion-icon>
                 </button>
             </form>
@@ -145,5 +145,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script language="javascript">
+            $('#submitTodo').click(function() {
+                $.ajax({
+                    url: "/ciappTest/index.php/Todo/addTodo",
+                    method: 'POST'
+                })
+            })
+        </script>
     </body>
 </html>
