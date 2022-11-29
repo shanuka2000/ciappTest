@@ -107,8 +107,6 @@
                     } else {
                         $('#output').text(data[0].definition);
                     }
-                    
-                    
                 })
                 event.preventDefault();
             })
